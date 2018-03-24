@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- Bootstrap 4.0.0-->
+        <link rel='stylesheet' href='css/bootstrap.min.css'>
+        <!-- Optional Theme from Bootstrap 4.0.0 -->
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="shortcut icon" type="image/png" href="png/favicon.ico">
+    </head>
+    <body>
+        <div class='container'>
+            <h1>
+                Welcome to <%=title %>
+            </h1>
+            <div class='row'>
+                <div class='col-sm'>
+                    <ul class='list-group'>
+                    <%for(var i=0; i<list.length; i++){%>
+                        <li class='list-group-item'><%=list[i] %></li>
+                    <%}%>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- JQuery 3.3.1 -->
+        <script src='js/jquery.min.js' type='application/javascript'></script>
+        <!-- Bootstrap 4.0.0 -->
+        <script src='js/bootstrap.min.js' type='application/javascript'></script>
+    </body>
+</html>
