@@ -6,6 +6,7 @@
 5. Check versions: ```node -v``` | ```nvm --version``` | ```npm -v```
 6. ```git init```
 7. ```npm init``` 
+8. Run with ```npm start``` or ```node app.js``` or ```DEBUG=* node app.js```
 
 # Notes on modules in use
 - 'chalk' lets you do colorful text outputs in the console ```    debug(`Hi Adam, listening on port ${chalk.green('3000')}`);```
@@ -16,8 +17,19 @@
 
 - 'path' comes with Node and lets you use things like path.join: ```path.join(__dirname, '/node_modules/bootstrap/dist/css')``` which nicely handles slashes and concatenation.
 
+- 'nodemon' (node mon)
+
+- 'eslint' - 
+
+
 
 # Notes to remember
 - To tell Express where it might find static files for the /js directory other than the actual /js directory: ```app.use('/js', express.static(path.join(__dirname, '/node_modules/jquery/dist')));```
 
-- 
+- ```npm start``` -
+
+- ```nodemon``` - 
+
+- npm scripts always assume local so an npm script with ```eslint app.js``` is actually running ```./node_modules/.bin/eslint```
+
+- node.green website has a matrix showing Node.js ES Support functionality across versions

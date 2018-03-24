@@ -4,7 +4,10 @@
     "description": "https://github.com/adamroddick/node-tut-library.git",
     "main": "app.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint app.js",
+        "debug": "DEBUG=app node app.js",
+        "start": "node app.js"
     },
     "author": "",
     "license": "ISC",
@@ -12,8 +15,13 @@
         "bootstrap": "4.0.0",
         "chalk": "2.3.2",
         "debug": "3.1.0",
+        "eslint": "4.19.1",
         "express": "4.16.3",
         "jquery": "3.3.1",
         "morgan": "1.9.0"
+    },
+    "devDependencies": {
+        "eslint-config-airbnb-base": "12.1.0",
+        "eslint-plugin-import": "2.9.0"
     }
 }
