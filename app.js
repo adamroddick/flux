@@ -9,5 +9,5 @@ app.get('/', function(req, res) {
 });
 
 app.listen(3000, function() {
-    console.log(`Hi Adam, listening on port ${chalk.green('3000')}`);
+    debug(`Hi Adam, listening on port ${chalk.green('3000')}`);
 });
