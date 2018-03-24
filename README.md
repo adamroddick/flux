@@ -8,5 +8,16 @@
 7. ```npm init``` 
 
 # Notes on modules in use
-Chalk lets you do colorful text outputs in the console.
-Debug hides debug messages unless running in DEBUG mode: ```DEBUG=* node app.js``` or if you do don't want to see all the DEBUG messages, just your own: ```DEBUG=app node app.js```
+- 'chalk' lets you do colorful text outputs in the console ```    debug(`Hi Adam, listening on port ${chalk.green('3000')}`);```
+
+- 'debug' hides debug messages unless running in DEBUG mode: ```DEBUG=* node app.js``` or if you only want to see your own DEBUG messages: ```DEBUG=app node app.js```
+
+- 'morgan' gives some nice web traffic information, GET requests and responses etc
+
+- 'path' comes with Node and lets you use things like path.join: ```path.join(__dirname, '/node_modules/bootstrap/dist/css')``` which nicely handles slashes and concatenation.
+
+
+# Notes to remember
+- To tell Express where it might find static files for the /js directory other than the actual /js directory: ```app.use('/js', express.static(path.join(__dirname, '/node_modules/jquery/dist')));```
+
+- 
