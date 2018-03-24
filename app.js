@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
   // res.sendFile(path.join(__dirname, 'views/index.html'));
-  res.render('index', { title: 'My EJS App', list: ['Lily', 'Kaley', 'Connor', 'Rosey'] });
+  res.render('index', { title: 'Stargate Command', sg1: ['Rosey', 'Kaley', 'Connor', 'Lily'] });
 });
 
 app.listen(port, () => {
