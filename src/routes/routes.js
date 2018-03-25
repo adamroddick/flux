@@ -11,10 +11,10 @@ function router() {
   ];
 
   const menuMain = [
+    { label: 'Palace', link: '/' },
     { label: 'Economy', link: 'economy' },
     { label: 'Research', link: 'research' },
     { label: 'Military', link: 'military' },
-    { label: 'Team', link: 'team' },
     { label: 'History', link: 'history' },
   ];
 
@@ -42,6 +42,17 @@ function router() {
     .get((req, res) => {
       res.render('economy', {
         title: 'Economy Page',
+        sg1,
+        menuMain,
+        menuDropdown1,
+        menuDropdown2,
+      });
+    });
+
+  xRouter.route('/team')
+    .get((req, res) => {
+      res.render('team', {
+        title: 'Team Page',
         sg1,
         menuMain,
         menuDropdown1,
