@@ -19,44 +19,55 @@ app.use('/js', express.static(path.join(__dirname, '/node_modules/jquery/dist'))
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
+app.use('/', xRouter);
+
 xRouter.route('/')
   .get((req, res) => {
-    res.send('Base tabs');
+    res.render('index', {
+      title: 'Stargate Command',
+      sg1: [
+        { name: 'Rosey', rank: 'Colonel' },
+        { name: 'Kaley', rank: 'Captain' },
+        { name: 'Connor', rank: 'Support' },
+        { name: 'Lily', rank: 'Doctor' },
+      ],
+      menuMain: [
+        { label: 'Economy', link: 'economy' },
+        { label: 'Research', link: 'research' },
+        { label: 'Military', link: 'military' },
+        { label: 'Team', link: 'team' },
+        { label: 'History', link: 'history' },
+      ],
+      menuDropdown1: [
+        { label: 'Team', link: 'team' },
+      ],
+      menuDropdown2: [
+        { label: 'Patch Notes', link: 'patchnotes' },
+        { label: 'About', link: 'about' },
+      ],
+    });
   });
 
 xRouter.route('/economy')
   .get((req, res) => {
-    res.send('Economy tab');
+    res.render('economy', {
+      title: 'Economy Page',
+      menuMain: [
+        { label: 'Economy', link: 'economy' },
+        { label: 'Research', link: 'research' },
+        { label: 'Military', link: 'military' },
+        { label: 'Team', link: 'team' },
+        { label: 'History', link: 'history' },
+      ],
+      menuDropdown1: [
+        { label: 'Team', link: 'team' },
+      ],
+      menuDropdown2: [
+        { label: 'Patch Notes', link: 'patchnotes' },
+        { label: 'About', link: 'about' },
+      ],
+    });
   });
-
-app.use('/tab', xRouter);
-
-app.get('/', (req, res) => {
-  // res.sendFile(path.join(__dirname, 'views/index.html'));
-  res.render('index', {
-    title: 'Stargate Command',
-    sg1: [
-      { name: 'Rosey', rank: 'Colonel' },
-      { name: 'Kaley', rank: 'Captain' },
-      { name: 'Connor', rank: 'Support' },
-      { name: 'Lily', rank: 'Doctor' },
-    ],
-    menuMain: [
-      { label: 'Economy', link: '/tab/economy' },
-      { label: 'Research', link: '/tab/research' },
-      { label: 'Military', link: '/tab/military' },
-      { label: 'Team', link: '/tab/team' },
-      { label: 'History', link: '/tab/history' },
-    ],
-    menuDropdown1: [
-      { label: 'Team', link: '/tab/team' },
-    ],
-    menuDropdown2: [
-      { label: 'Patch Notes', link: '/tab/patchnotes' },
-      { label: 'About', link: '/tab/about' },
-    ],
-  });
-});
 
 app.listen(port, () => {
   debug(`Hi Adam, listening on port ${chalk.green(port)}`);

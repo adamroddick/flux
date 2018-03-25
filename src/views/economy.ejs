@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <!-- Bootstrap 4.0.0-->
+        <link rel='stylesheet' href='css/bootstrap.min.css'>
+        <!-- Optional Theme from Bootstrap 4.0.0 -->
+        <link rel='stylesheet' href='css/bootstrap-theme.min.css'>
+        <link rel='stylesheet' href='css/floating-labels.css'>
+        <link rel='stylesheet' href='css/stargate.css'>
+        <link rel='shortcut icon' type='image/png' href='png/favicon.ico'>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>
+                Welcome to <%=title %>
+            </h1>
+            <ul class='nav nav-tabs'>
+                <li class='nav-item'>
+                    <%for(var i=0; i<menuMain.length; i++){%>
+                        <li class='nav-item'>
+                            <a class='nav-link active' href=<%=menuMain[i].link %> ><%=menuMain[i].label %></a>
+                        </li>    
+                    <%}%>
+                <li class='nav-item dropdown'>
+                    <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Other</a>
+                    <div class='dropdown-menu'>
+                    <%for(var i=0; i<menuDropdown1.length; i++){%>
+                        <a class='dropdown-item' href=<%=menuDropdown1[i].link %> ><%=menuDropdown1[i].label %></a>
+                    <%}%>
+                    <div class='dropdown-divider'></div>
+                    <%for(var i=0; i<menuDropdown2.length; i++){%>
+                        <a class='dropdown-item' href=<%=menuDropdown2[i].link %> ><%=menuDropdown2[i].label %></a>
+                    <%}%>
+                    </div>
+                </li>
+                </li>
+            </ul>
+            
+            <div class='row'>
+                <div class='col'>
+                    <h4>Heading 4</h4>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- JQuery 3.3.1 -->
+        <script src='js/jquery.min.js' type='application/javascript'></script>
+        <!-- Bootstrap 4.0.0 --><!-- Bootstrap JS Bundle contains popper.js for Menu Dropdowns -->
+        <script src='js/bootstrap.bundle.min.js' type='application/javascript'></script>
+    </body>
+</html>
