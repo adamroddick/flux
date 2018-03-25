@@ -4,10 +4,10 @@ const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
 
-const xRouter = require('./src/routes/routes');
-
-const port = process.env.PORT || 3000;
 const app = express();
+const port = process.env.PORT || 3000;
+
+const xRouter = require('./src/routes/routes');
 
 app.use('/', xRouter);
 
@@ -21,5 +21,5 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 app.listen(port, () => {
-  debug(`Hi Adam, listening on port ${chalk.green(port)}`);
+  debug(`Hi Adam, I'm listening on port ${chalk.green(port)}`);
 });
