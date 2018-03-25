@@ -19,7 +19,13 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
   // res.sendFile(path.join(__dirname, 'views/index.html'));
-  res.render('index', { title: 'Stargate Command', sg1: ['Rosey', 'Kaley', 'Connor', 'Lily'] });
+  res.render('index', {
+    title: 'Egypt',
+    sg1: ['Rosey', 'Kaley', 'Connor', 'Lily'],
+    sg1Ranks: ['Colonel', 'Captain', 'Support', 'Doctor'],
+    menuMain: ['Economy', 'Research', 'Military', 'History'],
+    menuDropdown: ['dd1', 'dd2', 'dd3'],
+  });
 });
 
 app.listen(port, () => {

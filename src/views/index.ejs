@@ -1,40 +1,78 @@
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset='UTF-8'>
         <!-- Bootstrap 4.0.0-->
         <link rel='stylesheet' href='css/bootstrap.min.css'>
         <!-- Optional Theme from Bootstrap 4.0.0 -->
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="shortcut icon" type="image/png" href="png/favicon.ico">
+        <link rel='stylesheet' href='css/bootstrap-theme.min.css'>
+        <link rel='stylesheet' href='css/floating-labels.css'>
+        <link rel='stylesheet' href='css/stargate.css'>
+        <link rel='shortcut icon' type='image/png' href='png/favicon.ico'>
     </head>
     <body>
         <div class='container'>
             <h1>
                 Welcome to <%=title %>
             </h1>
+            <ul class='nav nav-tabs'>
+                <li class='nav-item'>
+                    <%for(var i=0; i<menuMain.length; i++){%>
+                        <li class='nav-item'>
+                            <a class='nav-link active' href='#'><%=menuMain[i] %></a>
+                        </li>    
+                    <%}%>
+                <li class='nav-item dropdown'>
+                    <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Dropdown</a>
+                    <div class='dropdown-menu'>
+                    <%for(var i=0; i<menuDropdown.length; i++){%>
+                        <a class='dropdown-item' href='#'><%=menuDropdown[i] %></a>
+                    <%}%>
+                    <div class='dropdown-divider'></div>
+                        <a class='dropdown-item' href='#'>Separate1</a>
+                        <a class='dropdown-item' href='#'>Separate1</a>
+                    </div>
+                </li>
+                </li>
+            </ul>
+            
             <div class='row'>
                 <div class='col'>
                     <h2>SG1 Team Members</h2>
                     <ul class='list-group'>
                     <%for(var i=0; i<sg1.length; i++){%>
-                        <li class='list-group-item'><%=sg1[i] %></li>
+                        <div class='form-label-group'>
+                            <input type='text' id=<%=sg1Ranks[i] %> class='form-control list-group-item' value=<%=sg1[i] %> >
+                            <label for=<%=sg1Ranks[i] %> ><%=sg1Ranks[i] %></label>
+                        </div>
                     <%}%>
                     </ul>
                 </div>
                 <div class='col'>
                     <h2>Custom Team Members</h2>
                     <ul class='list-group'>
-                        <li class='list-group-item'>Colonel</li>
-                        <li class='list-group-item'>Captain</li>
-                        <li class='list-group-item'>Support</li>
-                        <li class='list-group-item'>Doctor</li>
+                        <div class='form-label-group'>
+                            <input type='text' id='inputColonel' class='form-control list-group-item' placeholder='Colonel' >
+                            <label for='inputColonel'>Colonel</label>
+                        </div>
+                            <div class='form-label-group'>
+                                <input type='text' id='inputCaptain' class='form-control list-group-item' placeholder='Captain' >
+                                <label for='inputCaptain'>Captain</label>
+                        </div>
+                            <div class='form-label-group'>
+                                <input type='text' id='inputSupport' class='form-control list-group-item' placeholder='Support' >
+                                <label for='inputSupport'>Support</label>
+                        </div>
+                            <div class='form-label-group'>
+                                <input type='text' id='inputDoctor' class='form-control list-group-item' placeholder='Doctor' >
+                                <label for='inputDoctor'>Doctor</label>
+                        </div>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- JQuery 3.3.1 -->
         <script src='js/jquery.min.js' type='application/javascript'></script>
-        <!-- Bootstrap 4.0.0 -->
-        <script src='js/bootstrap.min.js' type='application/javascript'></script>
+        <!-- Bootstrap 4.0.0 --><!-- Bootstrap JS Bundle contains popper.js for Menu Dropdowns -->
+        <script src='js/bootstrap.bundle.min.js' type='application/javascript'></script>
     </body>
 </html>
