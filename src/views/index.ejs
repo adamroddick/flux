@@ -18,7 +18,7 @@
                 <li class='nav-item'>
                     <%for(var i=0; i<menuMain.length; i++){%>
                         <li class='nav-item'>
-                            <a class='nav-link active' href='#'><%=menuMain[i] %></a>
+                            <a class='nav-link active' href=<%=menuMain[i].link %> ><%=menuMain[i].label %></a>
                         </li>    
                     <%}%>
                 <li class='nav-item dropdown'>
@@ -37,35 +37,25 @@
             
             <div class='row'>
                 <div class='col'>
-                    <h2>SG1 Team Members</h2>
+                    <h4>SG1</h2>
                     <ul class='list-group'>
                     <%for(var i=0; i<sg1.length; i++){%>
                         <div class='form-label-group'>
-                            <input type='text' id=<%=sg1Ranks[i] %> class='form-control list-group-item' value=<%=sg1[i] %> >
-                            <label for=<%=sg1Ranks[i] %> ><%=sg1Ranks[i] %></label>
+                            <input type='text' id=<%=sg1[i].name %> class='form-control list-group-item' value=<%=sg1[i].name %> >
+                            <label for=<%=sg1[i].name %> ><%=sg1[i].rank %></label>
                         </div>
                     <%}%>
                     </ul>
                 </div>
                 <div class='col'>
-                    <h2>Custom Team Members</h2>
+                    <h4>Custom Team</h2>
                     <ul class='list-group'>
+                        <%for(var i=0; i<sg1.length; i++){%>
                         <div class='form-label-group'>
-                            <input type='text' id='inputColonel' class='form-control list-group-item' placeholder='Colonel' >
-                            <label for='inputColonel'>Colonel</label>
+                            <input type='text' id=<%=sg1[i].rank %> class='form-control list-group-item' placeholder=<%=sg1[i].rank %> >
+                            <label for=<%=sg1[i].rank %> ><%=sg1[i].rank %></label>
                         </div>
-                            <div class='form-label-group'>
-                                <input type='text' id='inputCaptain' class='form-control list-group-item' placeholder='Captain' >
-                                <label for='inputCaptain'>Captain</label>
-                        </div>
-                            <div class='form-label-group'>
-                                <input type='text' id='inputSupport' class='form-control list-group-item' placeholder='Support' >
-                                <label for='inputSupport'>Support</label>
-                        </div>
-                            <div class='form-label-group'>
-                                <input type='text' id='inputDoctor' class='form-control list-group-item' placeholder='Doctor' >
-                                <label for='inputDoctor'>Doctor</label>
-                        </div>
+                        <%}%>
                     </ul>
                 </div>
             </div>
