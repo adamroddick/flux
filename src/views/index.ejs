@@ -22,14 +22,15 @@
                         </li>    
                     <%}%>
                 <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Dropdown</a>
+                    <a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Other</a>
                     <div class='dropdown-menu'>
-                    <%for(var i=0; i<menuDropdown.length; i++){%>
-                        <a class='dropdown-item' href='#'><%=menuDropdown[i] %></a>
+                    <%for(var i=0; i<menuDropdown1.length; i++){%>
+                        <a class='dropdown-item' href=<%=menuDropdown1[i].link %> ><%=menuDropdown1[i].label %></a>
                     <%}%>
                     <div class='dropdown-divider'></div>
-                        <a class='dropdown-item' href='#'>Separate1</a>
-                        <a class='dropdown-item' href='#'>Separate1</a>
+                    <%for(var i=0; i<menuDropdown2.length; i++){%>
+                        <a class='dropdown-item' href=<%=menuDropdown2[i].link %> ><%=menuDropdown2[i].label %></a>
+                    <%}%>
                     </div>
                 </li>
                 </li>
