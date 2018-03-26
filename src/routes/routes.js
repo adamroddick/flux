@@ -3,19 +3,19 @@ const express = require('express');
 const xRouter = express.Router();
 
 function router() {
-  const sg1 = [
-    { name: 'Rosey', rank: 'Colonel' },
-    { name: 'Kaley', rank: 'Captain' },
-    { name: 'Connor', rank: 'Support' },
-    { name: 'Lily', rank: 'Doctor' },
-  ];
-
   const menuMain = [
     { label: 'Palace', link: '/' },
     { label: 'Economy', link: 'economy' },
     { label: 'Research', link: 'research' },
     { label: 'Military', link: 'military' },
     { label: 'History', link: 'history' },
+  ];
+
+  const sg1 = [
+    { name: 'Rosey', rank: 'Colonel' },
+    { name: 'Kaley', rank: 'Captain' },
+    { name: 'Connor', rank: 'Support' },
+    { name: 'Lily', rank: 'Doctor' },
   ];
 
   const menuDropdown1 = [
@@ -27,10 +27,14 @@ function router() {
     { label: 'About', link: 'about' },
   ];
 
+  const humanWorkers = 0;
+  const food = 10;
+  const coin = 0;
+
   xRouter.route('/')
     .get((req, res) => {
       res.render('index', {
-        title: 'Stargate Command',
+        title: 'Pharoahs Palace',
         sg1,
         menuMain,
         menuDropdown1,
@@ -41,11 +45,14 @@ function router() {
   xRouter.route('/economy')
     .get((req, res) => {
       res.render('economy', {
-        title: 'Economy Page',
+        title: 'Ministry of Economics',
         sg1,
         menuMain,
         menuDropdown1,
         menuDropdown2,
+        humanWorkers,
+        food,
+        coin,
       });
     });
 

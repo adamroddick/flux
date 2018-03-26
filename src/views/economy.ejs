@@ -9,6 +9,17 @@
             <div class='row'>
                 <div class='col'>
                     <p>Economy</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Coin
+                            <span class="badge badge-primary badge-pill"><%=coin%></span> | <i>Coins are the foundation of your economy. Use them wisely.</i>
+                        </li>
+                        <li class="list-group-item">Workers
+                            <span class="badge badge-primary badge-pill"><%=humanWorkers%></span> | Add Worker(s): <button id='addWorker1' type="button" class="btn btn-sm btn-primary">1 Worker</button> <button id='addWorker10' type="button" class="btn btn-sm btn-primary">10 Workers</button> | <i>Workers cost 10 food each, consume 1 food per second but generate 1 coin per second.</i>
+                        </li>
+                        <li class="list-group-item">Food
+                            <span class="badge badge-primary badge-pill"><%=food%></span> | Add Worker(s): <button id='addFarmer1' type="button" class="btn btn-sm btn-primary">1 Farmer</button> <button id='addFarmer10' type="button" class="btn btn-sm btn-primary">10 Farmers</button> | <i>Farmers cost 10 food each, consume 1 food per second but produce 3 food per second.</i>
+                        </li>
+                      </ul>
                 </div>
             </div>
         </div>
